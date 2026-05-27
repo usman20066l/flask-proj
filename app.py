@@ -4,8 +4,8 @@ import json
 
 app = Flask(__name__)
 client = MongoClient("mongodb+srv://yuzen:Usman13%40@yuzen-perfumes.leixgxr.mongodb.net/?appName=YUZEN-Perfumes")
-db = client["student_db"]
-collection = db["students"]
+db = client["todo_db"]
+collection = db["todos"]
 
 
 
@@ -15,26 +15,20 @@ collection = db["students"]
 def home():
     return render_template("index.html")
 
-@app.route("/submit", methods=["POST"])
-def submit():
+@app.route("/submittodoitem", methods=["POST"])
+def submit_todo():
 
-    try:
-        
-        name = request.form["name"]
-        course = request.form["course"]
+    itemName = request.form.get("itemName")
+    itemDescription = request.form.get("itemDescription")
 
-        data = {
-            "name": name,
-            "course": course
-        }
-        
-        collection.insert_one(data)
+    collection.insert_one({
+        "itemName" : itemName,
+        "itemDescription": itemDescription
+    })
 
-        return redirect("/success")
-    
-    except Exception as e:
+    return "data stored successfully"
+  
 
-        return f"Error: {e}"
     
 # Success Page
 
