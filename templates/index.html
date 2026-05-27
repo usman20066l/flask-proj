@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Student Form</title>
 
@@ -17,7 +18,7 @@
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             width: 320px;
             text-align: center;
         }
@@ -39,7 +40,7 @@
 
         input:focus {
             border-color: #6c63ff;
-            box-shadow: 0 0 5px rgba(108,99,255,0.5);
+            box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
         }
 
         button {
@@ -64,30 +65,19 @@
 
     <div class="form-container">
 
-        <h1>Student Form</h1>
+        <form action="/submittodoitem" method="POST">
 
-        <form action="/submit" method="POST">
+            <input type="text" name="itemName" placeholder="Item Name">
 
-            <input type="text" name="name" placeholder="Enter Name" required>
-
-            <input type="course" name="course" placeholder="Your course" required>
+            <input type="text" name="itemDescription" placeholder="Item Description">
 
             <button type="submit">Submit</button>
+
 
         </form>
 
     </div>
 
-    <form action="/submittodoitem" method="POST">
-
-    <input type="text" name="itemName" placeholder="Item Name">
-
-    <input type="text" name="itemDescription" placeholder="Item Description">
-
-    <button type="submit">Submit</button>
-
-    
-   </form>
-
 </body>
+
 </html>
