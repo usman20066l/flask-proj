@@ -7,5 +7,12 @@
     {
         "name":"Arshad Ansari",
         "class":"I.D"
+    },
+
+    {
+       "name": "Usman",
+       "course": "DevOps",
+       "task": "Update JSON API Data"
     }
+
 ]
